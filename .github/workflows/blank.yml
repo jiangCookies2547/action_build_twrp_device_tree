@@ -6,7 +6,11 @@ on:
       IMG_URL:    
         description: 'IMG_URL'
         required: true
+<<<<<<< HEAD
         default: ''
+=======
+        default: 'https://github.com/momo54181/action_build_twrp_device_tree/blob/main/recovery.img'
+>>>>>>> 0fe80aa4e4e2f5fa79a640404b59176cab2a1b9f
 
 jobs:
   build:
@@ -20,7 +24,19 @@ jobs:
     - name: Prepare the environment
       run: |
         sudo apt update
+<<<<<<< HEAD
         sudo apt -y install python3 python-pip python3-pip cpio wget
+=======
+        sudo apt -y install python python3 python-pip python3-pip cpio wget
+      
+    - name: Set variables
+      run: |
+        echo "name=date::$(date +%F)" >> $GITHUB_OUTPUT
+      id: var
+      
+    - name: Install TWRP generator 
+      run: |
+>>>>>>> 0fe80aa4e4e2f5fa79a640404b59176cab2a1b9f
         pip3 install twrpdtgen
         mkdir dt
       
